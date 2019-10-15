@@ -52,13 +52,6 @@ const About = () => (
                 style={{ backgroundImage: `url(${AboutImage3})` }}
               ></div>
             </div>
-            <blockquote className="blockquote mt-5">
-              <p className="mb-2">
-                "Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia.."
-              </p>
-              <span>&mdash; Lucy Lee</span>
-            </blockquote>
           </div>
         </div>
       </div>

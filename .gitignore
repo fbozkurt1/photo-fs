@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 App.js
 index.css
 index.js
@@ -31,3 +32,7 @@ App.css
 /index.*
 /App.*
 >>>>>>> 7f8b475fca32317ad8185e80a6c242122e08c263
+=======
+/index.*
+/App.*
+>>>>>>> 87ec6502c14ab696d8ba5f911f091f6791e35d13

@@ -7,7 +7,7 @@ const Services = () => (
       <div className="row">
         <div className="col-md-9">
           <div className="row">
-            <div className="col-md-5 heading-section ftco-animate pb-5">
+            <div className="col-md-5 heading-sfection ftco-animate pb-5">
               <h2 className="mb-4">Hizmetlerimiz</h2>
               <p>
                 A small river named Duden flows by their place and supplies it
