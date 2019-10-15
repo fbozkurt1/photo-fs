@@ -4,7 +4,7 @@ class RadioButton extends Component {
   state = {};
   render() {
     return (
-      <div class="form-group required">
+      <div className="form-group required">
         <div className="row">
           <div className="col-sm-2 control-label">
             <div className="input-group mb-2">

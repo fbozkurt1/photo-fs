@@ -26,6 +26,8 @@ class InputText extends Component {
               name={values.name}
               id={values.id}
               placeholder={values.placeholder}
+              onChange={values.onChange}
+              pattern={values.pattern}
             />
           </div>
         </div>

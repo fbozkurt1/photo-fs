@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
-import InputText from "../FormComponents/inputText.js";
-import InputTextArea from "../FormComponents/inputTextArea.js";
+import InputText from "../components/FormComponents/inputText.js";
+import InputTextArea from "../components/FormComponents/inputTextArea.js";
 
 class Contact extends Component {
   state = {
