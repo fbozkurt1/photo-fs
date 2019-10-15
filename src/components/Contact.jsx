@@ -38,6 +38,7 @@ class Contact extends Component {
               icon="far fa-calendar-check"
               title="Randevu"
               value="randevu"
+              href="/appointment"
             />
           </div>
           <div className="row">
