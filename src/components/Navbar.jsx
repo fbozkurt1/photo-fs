@@ -20,13 +20,8 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <a data-scroll="work" href="#work" className="dot">
-            <span>Randevu</span>
-          </a>
-        </li>
-        <li>
           <a data-scroll="contact" href="#contact" className="dot">
-            <span>İletişime Geçin</span>
+            <span>Randevu ve İletişim</span>
           </a>
         </li>
       </ul>
