@@ -22,7 +22,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 App.js
 index.css
 index.js
 App.css
+=======
+/index.*
+/App.*
+>>>>>>> 7f8b475fca32317ad8185e80a6c242122e08c263
