@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "../Pages/Contact";
 
 const Footer = () => (
   <footer className="ftco-footer py-5">

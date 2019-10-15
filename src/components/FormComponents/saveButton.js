@@ -8,8 +8,8 @@ class SaveButton extends Component {
       <div class="form-group required">
         <div className="row">
           <div className="col-sm-2 control-label"></div>
-          <div className="col-sm-5">
-            <button class="btn btn-primary" type="submit">
+          <div className="col-sm-7">
+            <button class="btn btn-primary float-sm-right" type="submit">
               {values.text}
             </button>
           </div>

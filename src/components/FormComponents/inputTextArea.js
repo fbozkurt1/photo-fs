@@ -5,15 +5,20 @@ class InputTextArea extends Component {
 
   render() {
     const values = this.props;
+    const isLabeled =
+      values.isLabeled === 1 ? (
+        <div className="col-sm-2 control-label">
+          <div className="input-group mb-2">
+            <label>{values.placeholder} </label>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      );
     return (
       <div className="form-group required">
         <div className="row">
-          <div className="col-sm-2 control-label">
-            <div className="input-group mb-2">
-              <label>{values.placeholder} </label>
-            </div>
-          </div>
-          <div className="col-sm-3">
+          <div className={values.isLabeled === 1 ? "col-sm-7" : "col-sm-9"}>
             <textarea
               rows="5"
               cols="55"

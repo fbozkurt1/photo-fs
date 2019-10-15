@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ContactBox from "./ContactBox";
-
+import ContactForm from "../Pages/Contact";
+import GoogleMap from "./GoogleMap";
 class Contact extends Component {
   state = {};
   render() {
@@ -38,6 +39,14 @@ class Contact extends Component {
               title="Randevu"
               value="randevu"
             />
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <ContactForm />
+            </div>
+            <div className="col-md-6">
+              <GoogleMap />
+            </div>
           </div>
         </div>
       </section>
