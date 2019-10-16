@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import AboutImage from "../assets/images/about.jpg";
-import Image from "./Image";
+//images
+import AboutImage from "../../assets/images/about.jpg";
+import Image from "./sectionComponents/Image";
 
 class Gallery extends Component {
   state = {};

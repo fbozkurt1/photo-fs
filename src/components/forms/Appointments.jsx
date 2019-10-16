@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import InputText from "../FormComponents/inputText";
-import DropdownSelect from "../../../React/forms-app/src/FormComponents/dropdownSelect";
-import SaveButton from "../../../React/forms-app/src/FormComponents/saveButton";
-import LabelFor from "../../../React/forms-app/src/FormComponents/labelFor";
-import InputTextArea from "../../../React/forms-app/src/FormComponents/inputTextArea";
-import Dates from "../../../React/forms-app/src/FormComponents/Dates";
-class Appoitments extends Component {
+
+// components
+import InputText from "./formComponents/InputText";
+import DropdownSelect from "./formComponents/DropdownSelect";
+import SaveButton from "./formComponents/SaveButton";
+import InputTextArea from "./formComponents/InputTextArea";
+import Dates from "./formComponents/Dates";
+
+class Appointments extends Component {
   state = {};
   render() {
     return (
@@ -37,4 +39,4 @@ class Appoitments extends Component {
   }
 }
 
-export default Appoitments;
+export default Appointments;

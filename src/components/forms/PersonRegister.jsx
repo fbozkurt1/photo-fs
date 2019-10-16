@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import InputText from "../FormComponents/inputText";
-import DropdownSelect from "../FormComponents/dropdownSelect";
-import InputTextArea from "../FormComponents/inputTextArea";
-import RadioButton from "../FormComponents/radioButton";
-import SaveButton from "../FormComponents/saveButton";
-import Dates from "../FormComponents/Dates";
+
+// components
+import InputText from "./formComponents/InputText";
+import DropdownSelect from "./formComponents/DropdownSelect";
+import SaveButton from "./formComponents/SaveButton";
+import InputTextArea from "./formComponents/InputTextArea";
+import Dates from "./formComponents/Dates";
+import RadioButton from "./formComponents/RadioButton";
 
 class PersonRegister extends Component {
   state = {

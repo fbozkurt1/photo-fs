@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import ContactBox from "./ContactBox";
-import ContactForm from "../Pages/Contact";
-import GoogleMap from "./GoogleMap";
+import ContactBox from "./sectionComponents/ContactBox";
+import ContactForm from "../forms/ContactForm";
+import GoogleMap from "./sectionComponents/GoogleMap";
+
 class Contact extends Component {
   state = {};
   render() {

@@ -1,7 +1,9 @@
 import React from "react";
-import AboutImage2 from "../assets/images/about-2.jpg";
-import AboutImage from "../assets/images/about.jpg";
-import AboutImage3 from "../assets/images/about-3.jpg";
+
+//images
+import AboutImage2 from "../../assets/images/about-2.jpg";
+import AboutImage from "../../assets/images/about.jpg";
+import AboutImage3 from "../../assets/images/about-3.jpg";
 
 const About = () => (
   <section className="ftco-about img ftco-section" id="about">

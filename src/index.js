@@ -4,31 +4,26 @@ import { render } from "react-dom";
 // import { createStore } from "redux";
 // import rootReducer from "./reducers";
 
-// Created Components
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+//Pages
+import Mainpage from "./components/pages/Mainpage";
 
 // Tools
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./assets/css/style.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 //const store = createStore(rootReducer);
 
 render(
   <div style={{ backgroundColor: "#eceae9" }}>
-    <Navbar />
-    <Home />
-    <About />
-    <Services />
-    <Gallery />
-    <Contact />
-    <Footer />
+    <Mainpage />
   </div>,
   document.getElementById("root")
 );

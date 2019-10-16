@@ -6,7 +6,7 @@ class ContactBox extends Component {
     const values = this.props;
     const isAppointment =
       this.props.title === "Randevu" ? (
-        <a href="#" className="btn-custom">
+        <a href={this.props.href} className="btn-custom">
           {" "}
           Randevu Al <i className="ml-2"></i>{" "}
         </a>
