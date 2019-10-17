@@ -5,11 +5,11 @@ class SaveButton extends Component {
   render() {
     const values = this.props;
     return (
-      <div class="form-group required">
+      <div className="form-group required">
         <div className="row">
           <div className="col-sm-2 control-label"></div>
           <div className="col-sm-7">
-            <button class="btn btn-primary float-sm-right" type="submit">
+            <button className="btn btn-primary float-sm-right" type="submit">
               {values.text}
             </button>
           </div>

@@ -8,14 +8,31 @@ import InputTextArea from "./formComponents/InputTextArea";
 import Dates from "./formComponents/Dates";
 import Home from "../sections/Home";
 import Footer from "../sections/Footer";
+import $ from "jquery";
 
 class Appointments extends Component {
   state = {};
+
+  componentDidMount() {
+    var target = $($("#appointment").attr("href"));
+    $("html, body").animate(
+      {
+        scrollTop: target.offset().top
+      },
+      600
+    );
+  }
+
   render() {
     return (
       <div>
-        <Home />
-        <div className="container-fluid mt-5">
+        <Home href="/appointments" />
+
+        <h2 id="appointment" href="#appointment" className="text-center mt-5">
+          Randevu Oluştur
+        </h2>
+
+        <div className="container mt-5">
           <InputText
             placeholder="İsim, Soyisim"
             type="text"
@@ -34,7 +51,10 @@ class Appointments extends Component {
             name="email"
             id="email"
           />
-          <DropdownSelect typeOfPhoto={["Dış Çekim", "Doğum", "Etkinlik"]} />
+          <DropdownSelect
+            id={["outSide", "born", "event"]}
+            typeOfPhoto={["Dış Çekim", "Doğum", "Etkinlik"]}
+          />
           <InputTextArea
             id="message"
             name="message"
@@ -42,6 +62,16 @@ class Appointments extends Component {
             placeholder="Özel Mesajınız."
           />
           <Dates />
+
+          <div className="mb-3">
+            <strong>
+              <i>
+                Talep ettiğiniz randevu tarafımızca onaylandıktan sonra mail
+                veya telefon ile bilgilendirileceksiniz.
+              </i>
+            </strong>
+          </div>
+
           <SaveButton text="Randevu Al" />
         </div>
         <Footer />

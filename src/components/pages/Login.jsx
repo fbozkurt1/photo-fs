@@ -6,7 +6,7 @@ class Login extends Component {
   componentDidMount() {
     var showPass = 0;
     $(".btn-show-pass").on("click", function() {
-      if (showPass == 0) {
+      if (showPass === 0) {
         $(this)
           .next("input")
           .attr("type", "text");
