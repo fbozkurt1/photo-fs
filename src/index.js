@@ -6,11 +6,16 @@ import { render } from "react-dom";
 
 //Pages
 import Mainpage from "./components/pages/Mainpage";
-
+import Appointments from "../src/components/forms/Appointments";
+import Login from "../src/components/pages/Login";
 // Tools
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./assets/css/style.css";
+import "./assets/css/login.css";
+import "./assets/js/main.js";
+import "./assets/css/util.css";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -23,7 +28,13 @@ import {
 
 render(
   <div style={{ backgroundColor: "#eceae9" }}>
-    <Mainpage />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Mainpage}></Route>
+        <Route exact path="/appointments" component={Appointments}></Route>
+        <Route exact path="/Login" component={Login}></Route>
+      </Switch>
+    </Router>
   </div>,
   document.getElementById("root")
 );

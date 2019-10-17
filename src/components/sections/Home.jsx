@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = () => (
+const Home = props => (
   <section
     id="home"
     className="hero-wrap js-fullheight bg-photo"
@@ -26,7 +26,7 @@ const Home = () => (
               which roasted parts.
             </p>
             <p className="mt-5">
-              <a href="#" className="btn-custom">
+              <a href={props.href} className="btn-custom">
                 Randevu
                 <i className="ml-2 fas fa-arrow-right"></i>
               </a>

@@ -15,7 +15,7 @@ class Mainpage extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <Home />
+        <Home href="/appointments" />
         <About />
         <Services />
         <Gallery />

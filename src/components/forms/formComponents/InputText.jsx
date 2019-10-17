@@ -10,6 +10,7 @@ class InputText extends Component {
 
   render() {
     const values = this.props;
+
     const isLabeled =
       values.isLabeled === 1 ? (
         <div className="col-sm-2 control-label">
