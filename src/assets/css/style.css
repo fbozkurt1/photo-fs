@@ -679,15 +679,7 @@ a:hover {
   padding-bottom: 5px;
   font-family: "Noto Serif", serif;
 }
-/* .slider-text .btn-custom {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #9da1a5;
-  font-size: 15px;
-  letter-spacing: 1px;
-} */
+
 .slider-text .btn-custom {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 15px 20px;
