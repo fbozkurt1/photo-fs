@@ -19,6 +19,7 @@ import "./assets/js/main.js";
 import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Sidebar from "./components/pages/Admin/Sidebar";
 
 render(
   <div style={{ backgroundColor: "#eceae9" }}>
