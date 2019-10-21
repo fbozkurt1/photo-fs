@@ -12,7 +12,6 @@ class Sidebar extends Component {
             data-toggle="collapse"
             data-target="#menu-content"
           ></i>
-
           <div className="menu-list">
             <ul id="menu-content" className="menu-content collapse out">
               <li>

@@ -19,16 +19,16 @@ import "./assets/js/main.js";
 import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Sidebar from "./components/pages/Admin/Sidebar";
+import Adminpage from "./components/pages/Adminpage";
 
 render(
-  <div style={{ backgroundColor: "#eceae9" }}>
+  <div>
     <Router>
       <Switch>
         <Route exact path="/" component={Mainpage}></Route>
         <Route exact path="/appointments" component={Appointment}></Route>
         <Route exact path="/Login" component={Login}></Route>
-        <Route exact path="/admin" component={Sidebar}></Route>
+        <Route exact path="/admin" component={Adminpage}></Route>
       </Switch>
     </Router>
   </div>,
