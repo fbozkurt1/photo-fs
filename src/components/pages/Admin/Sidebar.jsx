@@ -27,22 +27,33 @@ class Sidebar extends Component {
                 className="collapsed active"
               >
                 <a href="#">
-                  <i className="fas fa-users-cog fa-lg"></i>Yönetici İşlemleri{" "}
+                  <i className="fas fa-users-cog fa-lg"></i>
+                  <span className="ml-2">Yönetici İşlemleri</span>
                   <span className="fas fa-arrow-down float-right pt-3 pr-3"></span>
                 </a>
               </li>
               <ul className="sub-menu collapse" id="products">
-                <li className="active">
-                  <a href="#">Personel Ekle</a>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Personel Ekle
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Personel Bilgleri Düzenle</a>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Personel Bilgileri
+                    Düzenle
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Personel Listesi</a>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Personel Listesi
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Personel Durum Görüntüleme</a>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Personel Durum
+                    Görüntüleme
+                  </a>
                 </li>
               </ul>
 
@@ -52,18 +63,42 @@ class Sidebar extends Component {
                 className="collapsed"
               >
                 <a href="#">
-                  <i className="fas fa-address-book fa-lg"></i> Müşteri
-                  İşlemleri{" "}
+                  <i className="fas fa-address-book fa-lg"></i>
+                  <span className="ml-2">Müşteri İşlemleri</span>
                   <span className="fas fa-arrow-down float-right pt-3 pr-3"></span>
                 </a>
               </li>
               <ul className="sub-menu collapse" id="service">
-                <li>Müşteri Ekle</li>
-                <li>Müşteri Düzenle</li>
-                <li>Müşteri Sil</li>
-                <li>Fotoğraf Yükleme</li>
-                <li>Teslim Edilenler</li>
-                <li>Teslim Edilmeyi Bekleyenler</li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Müşteri Ekle
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Müşteri Düzenle
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Müşteri Sil
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Fotoğraf Yükleme
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Teslim Edilenler
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Teslim Edilmeyenler
+                  </a>
+                </li>
               </ul>
 
               <li
@@ -72,33 +107,42 @@ class Sidebar extends Component {
                 className="collapsed"
               >
                 <a href="#">
-                  <i className="fas fa-envelope fa-lg"></i> Mesajlar
+                  <i className="fas fa-envelope fa-lg"></i>
+                  <span className="ml-2">Mesajlar</span>
                   <span className="fas fa-arrow-down float-right pt-3 pr-3"></span>
                 </a>
               </li>
               <ul className="sub-menu collapse" id="new">
-                <li>Geri Dönüş Bildirimleri</li>
+                <li>
+                  <a href="#">
+                    <i className="fas fa-arrow-right"></i> Geri Dönüş
+                    Bildirimleri
+                  </a>
+                </li>
               </ul>
 
               <li>
                 <a href="#">
-                  <i className="fa fa-user fa-lg"></i>Randevu Talepleri
+                  <i className="fa fa-user fa-lg"></i>
+                  <span className="ml-2">Randevu Talepleri</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i className="far fa-paper-plane fa-lg"></i>Mail, Bildirim
-                  Gönder
+                  <i className="far fa-paper-plane fa-lg"></i>
+                  <span className="ml-2">Mail veya Bildirim Gönder</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i className="far fa-calendar-alt fa-lg"></i> Takvim
+                  <i className="far fa-calendar-alt fa-lg"></i>
+                  <span className="ml-2">Takvim</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i className="fas fa-sign-out-alt fa-lg"></i> Çıkış
+                  <i className="fas fa-sign-out-alt fa-lg"></i>
+                  <span className="ml-2">Çıkış</span>
                 </a>
               </li>
             </ul>

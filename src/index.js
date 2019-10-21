@@ -28,6 +28,7 @@ render(
         <Route exact path="/" component={Mainpage}></Route>
         <Route exact path="/appointments" component={Appointment}></Route>
         <Route exact path="/Login" component={Login}></Route>
+        <Route exact path="/admin" component={Sidebar}></Route>
       </Switch>
     </Router>
   </div>,
