@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "./Admin/Sidebar";
 import CardView from "./Admin/CardView";
+import TempDataTable from "./Admin/TempDataTable";
 
 class Adminpage extends Component {
   state = {};
@@ -37,6 +38,9 @@ class Adminpage extends Component {
                   text="Mesajınız var!"
                 />
               </div>
+            </div>
+            <div className="row mt-5">
+              <TempDataTable />
             </div>
           </div>
         </div>

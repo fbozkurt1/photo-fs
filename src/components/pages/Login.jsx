@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import "../../assets/css/login.css";
+import "../../assets/js/main.js";
 class Login extends Component {
   state = {};
 

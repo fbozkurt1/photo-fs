@@ -9,6 +9,8 @@ import Gallery from "../sections/Gallery";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
 
+import "../../assets/css/style.css";
+
 class Mainpage extends Component {
   state = {};
   render() {

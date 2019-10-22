@@ -13,9 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-import "./assets/css/style.css";
-import "./assets/css/login.css";
-import "./assets/js/main.js";
 import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
