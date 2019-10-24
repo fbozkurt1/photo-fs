@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { DatePicker } from "rsuite";
 class Dates extends Component {
   state = {};
   render() {
@@ -14,7 +14,25 @@ class Dates extends Component {
           </div>
           <div className="col-sm-3">
             <div>
-              <input className="form-control" type="date"></input>
+              <DatePicker
+                format="YYYY-MM-DD HH:mm:ss"
+                locale={{
+                  sunday: "Paz",
+                  monday: "Pzt",
+                  tuesday: "Sal",
+                  wednesday: "Çar",
+                  thursday: "Per",
+                  friday: "Cum",
+                  saturday: "Cmt",
+                  ok: "Tamam",
+                  today: "Bugün",
+                  yesterday: "Dün",
+                  hours: "Saat",
+                  minutes: "Dakika",
+                  seconds: "Saniye"
+                }}
+                placeholder="Tarih Seçin"
+              />
             </div>
           </div>
         </div>
