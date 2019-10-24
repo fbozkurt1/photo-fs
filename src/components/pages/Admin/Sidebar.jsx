@@ -15,7 +15,7 @@ class Sidebar extends Component {
           <div className="menu-list">
             <ul id="menu-content" className="menu-content collapse out">
               <li>
-                <a href="#">
+                <a href="/admin">
                   <i className="fa fa-dashboard fa-lg"></i> Yönetim Paneli
                 </a>
               </li>
@@ -33,7 +33,7 @@ class Sidebar extends Component {
               </li>
               <ul className="sub-menu collapse" id="products">
                 <li>
-                  <a href="#">
+                  <a href="/addemployee">
                     <i className="fas fa-arrow-right"></i> Personel Ekle
                   </a>
                 </li>

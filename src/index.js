@@ -17,6 +17,7 @@ import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Adminpage from "./components/pages/Adminpage";
+import AddEmployee from "./components/pages/AddEmployee";
 
 render(
   <div>
@@ -26,6 +27,7 @@ render(
         <Route exact path="/appointments" component={Appointment}></Route>
         <Route exact path="/Login" component={Login}></Route>
         <Route exact path="/admin" component={Adminpage}></Route>
+        <Route exact path="/addemployee" component={AddEmployee}></Route>
       </Switch>
     </Router>
   </div>,
