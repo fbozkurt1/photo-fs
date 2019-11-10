@@ -11,7 +11,7 @@ const Progress = () => {
     <div className="row mt-5">
       <div className="col">
         {/*current data will fetch from somewhere*/}
-        <Steps current={1}>
+        <Steps current={0}>
           <Steps.Item title="Finished" />
           <Steps.Item title="In progress" />
           <Steps.Item title="Waiting" />

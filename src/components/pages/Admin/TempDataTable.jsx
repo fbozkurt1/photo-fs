@@ -6,6 +6,36 @@ $.DataTable = require("datatables.net-dt/js/dataTables.dataTables.min.js");
 
 class Table extends Component {
   state = {};
+
+  constructor(props) {
+    super(props);
+    this.getDataHeaders = this.getDataHeaders.bind(this);
+    this.getDataRows = this.getDataRows.bind(this);
+    this.getDataKeys = this.getDataKeys.bind(this);
+    console.log(props);
+  }
+
+  getDataKeys = () => Object.keys(this.props.data[0]);
+
+  getDataHeaders = () => {
+    let keys = this.getDataKeys();
+    return keys.map((key, index) => {
+      return <th key={key}>{key}</th>;
+    });
+  };
+
+  getDataRows = () => {
+    let items = this.props.data;
+    let keys = this.getDataKeys();
+    return items.map((row, index) => {
+      return (
+        <tr key={index}>
+          <RenderRow key={index} data={row} keys={keys} />
+        </tr>
+      );
+    });
+  };
+
   componentDidMount() {
     $(document).ready(function() {
       $("#dataTable").DataTable({
@@ -16,6 +46,7 @@ class Table extends Component {
       });
     });
   }
+
   render() {
     return (
       <div className="card ml-3 w-100">
@@ -32,91 +63,12 @@ class Table extends Component {
               cellSpacing="0"
             >
               <thead>
-                <tr>
-                  <th>İsim</th>
-                  <th>Teslim Durumu</th>
-                  <th>Çekim Tipi</th>
-                  <th>İşlem Yapan</th>
-                  <th>Çekim Tarihi</th>
-                  <th>Fiyat</th>
-                </tr>
+                <tr>{this.getDataHeaders()}</tr>
               </thead>
               <tfoot>
-                <tr>
-                  <th>İsim</th>
-                  <th>Teslim Durumu</th>
-                  <th>Çekim Tipi</th>
-                  <th>İşlem Yapan</th>
-                  <th>Çekim Tarihi</th>
-                  <th>Fiyat</th>
-                </tr>
+                <tr>{this.getDataHeaders()}</tr>
               </tfoot>
-              <tbody>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                  <td>Singapore</td>
-                  <td>29</td>
-                  <td>2011/06/27</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                  <td>New York</td>
-                  <td>27</td>
-                  <td>2011/01/25</td>
-                  <td>$112,000</td>
-                </tr>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                  <td>Singapore</td>
-                  <td>29</td>
-                  <td>2011/06/27</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                  <td>New York</td>
-                  <td>27</td>
-                  <td>2011/01/25</td>
-                  <td>$112,000</td>
-                </tr>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                  <td>Singapore</td>
-                  <td>29</td>
-                  <td>2011/06/27</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                  <td>New York</td>
-                  <td>27</td>
-                  <td>2011/01/25</td>
-                  <td>$112,000</td>
-                </tr>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                  <td>Singapore</td>
-                  <td>29</td>
-                  <td>2011/06/27</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                  <td>New York</td>
-                  <td>27</td>
-                  <td>2011/01/25</td>
-                  <td>$112,000</td>
-                </tr>
-              </tbody>
+              <tbody>{this.getDataRows()}</tbody>
             </table>
           </div>
         </div>
@@ -124,5 +76,11 @@ class Table extends Component {
     );
   }
 }
+
+const RenderRow = props => {
+  return props.keys.map((key, index) => {
+    return <td key={props.data[key]}>{props.data[key]}</td>;
+  });
+};
 
 export default Table;

@@ -37,12 +37,6 @@ class Feedback extends Component {
           name="feedbackMessage"
           id="feedbackMessage"
         />
-        <InputTextArea
-          placeholder="Olumsuz Yanlarımız"
-          type="text"
-          name="feedbackMessage"
-          id="feedbackMessage"
-        />
         <InputText
           placeholder="Değerlendirme Puanı 100 üzerinden"
           type="text"

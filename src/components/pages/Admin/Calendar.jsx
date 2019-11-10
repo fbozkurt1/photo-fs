@@ -19,7 +19,8 @@ class Scheduler extends Component {
         Subject: "Paris",
         StartTime: new Date(2019, 9, 23, 10, 0),
         EndTime: new Date(2019, 9, 23, 12, 30),
-        isReadonly: true
+        isReadonly: true,
+        color: "black"
       }
     ];
   }

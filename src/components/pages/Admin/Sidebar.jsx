@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "../../../assets/css/sidebar.css";
 class Sidebar extends Component {
-  state = {};
+  state = {
+    userName: "Fuat Bozkurt"
+  };
   render() {
     return (
       <div>
         <div className="nav-side-menu ">
-          <div className="brand">Kullanıcı İsmi Gelicek</div>
+          <div className="brand">{this.state.userName}</div>
           <i
             className="fa fa-bars fa-2x toggle-btn"
             data-toggle="collapse"
@@ -16,7 +18,8 @@ class Sidebar extends Component {
             <ul id="menu-content" className="menu-content collapse out">
               <li>
                 <a href="/admin">
-                  <i className="fa fa-dashboard fa-lg"></i> Yönetim Paneli
+                  <i className="fa fa-tachometer-alt fa-lg"></i>
+                  <span className="ml-2">Yönetim Paneli</span>
                 </a>
               </li>
 
@@ -33,25 +36,8 @@ class Sidebar extends Component {
               </li>
               <ul className="sub-menu collapse" id="products">
                 <li>
-                  <a href="/addemployee">
-                    <i className="fas fa-arrow-right"></i> Personel Ekle
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Personel Bilgileri
-                    Düzenle
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Personel Listesi
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Personel Durum
-                    Görüntüleme
+                  <a href="/employee">
+                    <i className="fas fa-arrow-right"></i> Personel İşlemleri
                   </a>
                 </li>
               </ul>
