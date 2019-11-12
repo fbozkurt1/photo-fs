@@ -1,8 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-// import { Provider } from "react-redux";
-// import { createStore } from "redux";
-// import rootReducer from "./reducers";
 
 //Pages
 import Mainpage from "./components/pages/Mainpage";
@@ -10,6 +7,7 @@ import Appointment from "../src/components/pages/Appointment";
 import Login from "../src/components/pages/Login";
 import Adminpage from "./components/pages/Adminpage";
 import Employee from "./components/pages/Employee/Employee";
+
 // Tools
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";

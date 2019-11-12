@@ -16,14 +16,23 @@ class Employee extends Component {
   componentDidMount() {
     // get employees from API and set state
     let dummyData = [
-      { Adı: "fuat", Telefon: "0555555555555", Email: "Bangalore" },
-      { Adı: "sefa", Telefon: "0555555555555", Email: "Mumbai" },
-      { Adı: "çiğdem", Telefon: "0555555555555", Email: "Chennai" },
-      { Adı: "furkan bozkurt", Telefon: "0555555555555", Email: "Delhi" },
       {
-        Adı: "orospu cocugu ahmet",
+        Adı: "fuat",
         Telefon: "0555555555555",
-        Email: "Hyderabad"
+        Email: "Bangalore",
+        deneme: "fuat2",
+        "": (
+          <div>
+            <button type="button" className="btn btn-primary">
+              <span className="fa fa-edit mr-2" aria-hidden="true"></span>
+              Düzenle
+            </button>
+            <button type="button" className="btn btn-primary">
+              <span className="fa fa-trash-alt mr-2" aria-hidden="true"></span>
+              Sil
+            </button>
+          </div>
+        )
       }
     ];
     this.setState({
@@ -36,9 +45,13 @@ class Employee extends Component {
     const { data, isLoaded } = this.state;
 
     const isDataExist = isLoaded ? (
-      <DataTable data={data} />
+      <DataTable
+        data={data}
+        title="Personel Listesi"
+        textButtonAdd="Personel Ekle"
+      />
     ) : (
-      <h1>asdsadsadad</h1>
+      <h1>data yok daha</h1>
     );
     return (
       <div className="row">

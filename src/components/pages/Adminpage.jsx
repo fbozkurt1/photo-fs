@@ -41,9 +41,9 @@ class Adminpage extends Component {
                 />
               </div>
             </div>
-            <div className="row mt-5">
+            {/* <div className="row mt-5">
               <TempDataTable />
-            </div>
+            </div> */}
             <div className="row mt-5">
               <div className="col">
                 <Footer />
