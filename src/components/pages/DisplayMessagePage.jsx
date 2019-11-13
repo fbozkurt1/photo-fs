@@ -1,8 +1,52 @@
 import React, { Component } from "react";
 import Sidebar from "./Admin/Sidebar";
-import MessageCard from "./Admin/Cards/MessageCards";
+import MsgCard from "./Admin/Cards/Card";
+
 class DisplayMessage extends Component {
-  state = {};
+  state = { cards: [] };
+
+  componentDidMount() {
+    const dummyData = [
+      {
+        name: "Sefa Çotoğlu",
+        title: "İletişim İsteği",
+        email: "scotoglu@gmail.com",
+        phone: "5302603724",
+        date: "21.11.2019",
+        description:
+          "It is the seventh most populous city in Italy, at the heart of ametropolitan area of about one million people. It is the seventhmost populous city in Italy, at the heart of a metropolitan area of about one million people."
+      },
+      {
+        name: "Sefa Çotoğlu2",
+        title: "İletişim İsteği",
+        email: "scotoglu@gmail.com",
+        phone: "5302603724",
+        date: "21.11.2019",
+        description:
+          "It is the seventh most populous city in Italy, at the heart of ametropolitan area of about one million people. It is the seventhmost populous city in Italy, at the heart of a metropolitan area of about one million people."
+      }
+    ];
+
+    let cardData = dummyData.map(elem => {
+      return (
+        <div className="row mt-5 justify-content-center">
+          <div className="col-md-10">
+            <MsgCard
+              name={elem.name}
+              title={elem.title}
+              email={elem.email}
+              phone={elem.phone}
+              date={elem.date}
+              description={elem.description}
+              isAppointmentCard="0"
+              feedbackPoint="0"
+            />
+          </div>
+        </div>
+      );
+    });
+    this.setState({ cards: cardData });
+  }
   render() {
     return (
       <div className="row">
@@ -10,67 +54,7 @@ class DisplayMessage extends Component {
           <Sidebar />
         </div>
         <div className="col-md-10 align-item-center">
-          <div className="container">
-            <div className="row mt-5 justify-content-center">
-              <div className="col-md-6">
-                <MessageCard
-                  msgType="1"
-                  name="Sefa ÇOTOĞLU"
-                  email="scotoglu@gmail.com"
-                  phone="5302603724"
-                  message="Lorem Ipsum is simply dummy text of the 
-              printing and typesetting industry. Lorem Ipsum has
-               been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                  point="50"
-                />
-              </div>
-              <div className="col-md-6">
-                <MessageCard
-                  msgType="0"
-                  name="Sefa ÇOTOĞLU"
-                  email="scotoglu@gmail.com"
-                  phone="5302603724"
-                  message="Lorem Ipsum is simply dummy text of the 
-              printing and typesetting industry. Lorem Ipsum has
-               been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                  point="50"
-                />
-              </div>
-            </div>
-
-            <div className="row mt-5 justify-content-center">
-              <div className="col-md-10">
-                <MessageCard
-                  msgType="1"
-                  name="Sefa ÇOTOĞLU"
-                  email="scotoglu@gmail.com"
-                  phone="5302603724"
-                  message="Lorem Ipsum is simply dummy text of the 
-              printing and typesetting industry. Lorem Ipsum has
-               been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                  point="50"
-                />
-              </div>
-            </div>
-            <div className="row mt-5 justify-content-center">
-              <div className="col-md-10">
-                <MessageCard
-                  msgType="0"
-                  name="Sefa ÇOTOĞLU"
-                  email="scotoglu@gmail.com"
-                  phone="5302603724"
-                  message="Lorem Ipsum is simply dummy text of the 
-              printing and typesetting industry. Lorem Ipsum has
-               been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                  point="50"
-                />
-              </div>
-            </div>
-          </div>
+          <div className="container">{this.state.cards}</div>
         </div>
       </div>
     );
