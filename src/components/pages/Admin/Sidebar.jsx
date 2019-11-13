@@ -55,20 +55,11 @@ class Sidebar extends Component {
               </li>
               <ul className="sub-menu collapse" id="service">
                 <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Müşteri Ekle
+                  <a href="/customer">
+                    <i className="fas fa-arrow-right"></i> Müşteri İşlemleri
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Müşteri Düzenle
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Müşteri Sil
-                  </a>
-                </li>
+
                 <li>
                   <a href="#">
                     <i className="fas fa-arrow-right"></i> Fotoğraf Yükleme
@@ -99,15 +90,14 @@ class Sidebar extends Component {
               </li>
               <ul className="sub-menu collapse" id="new">
                 <li>
-                  <a href="#">
-                    <i className="fas fa-arrow-right"></i> Geri Dönüş
-                    Bildirimleri
+                  <a href="/messages">
+                    <i className="fas fa-arrow-right"></i> Mesajları Göster
                   </a>
                 </li>
               </ul>
 
               <li>
-                <a href="#">
+                <a href="/apporeq">
                   <i className="fa fa-user fa-lg"></i>
                   <span className="ml-2">Randevu Talepleri</span>
                 </a>

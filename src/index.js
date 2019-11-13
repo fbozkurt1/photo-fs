@@ -7,7 +7,8 @@ import Appointment from "../src/components/pages/Appointment";
 import Login from "../src/components/pages/Login";
 import Adminpage from "./components/pages/Adminpage";
 import Employee from "./components/pages/Employee/Employee";
-
+import Customer from "./components/pages/Customer/Customer";
+import AppointmentRequest from "./components/pages/AppointmentRequest";
 // Tools
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -16,6 +17,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import DisplayMessage from "./components/pages/DisplayMessagePage";
 
 render(
   <div>
@@ -26,6 +28,9 @@ render(
         <Route exact path="/Login" component={Login}></Route>
         <Route exact path="/admin" component={Adminpage}></Route>
         <Route exact path="/employee" component={Employee}></Route>
+        <Route exact path="/customer" component={Customer}></Route>
+        <Route exact path="/apporeq" component={AppointmentRequest}></Route>
+        <Route exact path="/messages" component={DisplayMessage}></Route>
       </Switch>
     </Router>
   </div>,
