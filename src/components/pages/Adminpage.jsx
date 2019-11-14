@@ -5,8 +5,28 @@ import TempDataTable from "./Admin/TempDataTable";
 import Scheduler from "./Admin/Calendar";
 import Footer from "../sections/Footer";
 import Progress from "../forms/formComponents/Progress";
+import Modal from "./Admin/Modal/Modal";
+
 class Adminpage extends Component {
-  state = {};
+  constructor() {
+    super();
+
+    this.state = {
+      isShowing: false
+    };
+  }
+
+  openModalHandler = () => {
+    this.setState({
+      isShowing: true
+    });
+  };
+
+  closeModalHandler = () => {
+    this.setState({
+      isShowing: false
+    });
+  };
   render() {
     return (
       <div className="row">
@@ -41,11 +61,39 @@ class Adminpage extends Component {
                 />
               </div>
             </div>
-            {/* <div className="row mt-5">
-              <TempDataTable />
+            <div>
+              <Modal deneme="fuat">
+                <h1>asdadasdasdsa</h1>
+                <h2>asdadasdasd</h2>
+              </Modal>
+            </div>
+            {/* <div className="row">
+              {this.state.isShowing ? (
+                <div
+                  onClick={this.closeModalHandler}
+                  className="back-drop"
+                ></div>
+              ) : null}
+
+              <button
+                className="open-modal-btn"
+                onClick={this.openModalHandler}
+              >
+                Open Modal
+              </button>
+
+              <Modal
+                className="modal"
+                show={this.state.isShowing}
+                close={this.closeModalHandler}
+              >
+                Maybe aircrafts fly very high because they don't want to be seen
+                in plane sight?
+              </Modal>
             </div> */}
+
             <div className="row mt-5">
-              <div className="col">
+              <div className="col-md-12">
                 <Footer />
               </div>
             </div>

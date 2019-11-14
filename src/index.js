@@ -9,6 +9,8 @@ import Adminpage from "./components/pages/Adminpage";
 import Employee from "./components/pages/Employee/Employee";
 import Customer from "./components/pages/Customer/Customer";
 import AppointmentRequest from "./components/pages/AppointmentRequest";
+import CalendarPage from "./components/pages/CalendarPage";
+
 // Tools
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -31,6 +33,7 @@ render(
         <Route exact path="/customer" component={Customer}></Route>
         <Route exact path="/apporeq" component={AppointmentRequest}></Route>
         <Route exact path="/messages" component={DisplayMessage}></Route>
+        <Route exact path="/calendar" component={CalendarPage}></Route>
       </Switch>
     </Router>
   </div>,

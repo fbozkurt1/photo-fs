@@ -5,6 +5,23 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+body .modal {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+  bottom: 25%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  display: block;
+}
+
 .navbar {
   position: relative;
   display: -webkit-box;
