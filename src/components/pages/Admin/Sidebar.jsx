@@ -109,7 +109,7 @@ class Sidebar extends Component {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/scheduler">
                   <i className="far fa-calendar-alt fa-lg"></i>
                   <span className="ml-2">Takvim</span>
                 </a>

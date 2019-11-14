@@ -18,6 +18,7 @@ import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DisplayMessage from "./components/pages/DisplayMessagePage";
+import CalendarPage from "./components/pages/CalendarPage";
 
 render(
   <div>
@@ -31,6 +32,7 @@ render(
         <Route exact path="/customer" component={Customer}></Route>
         <Route exact path="/apporeq" component={AppointmentRequest}></Route>
         <Route exact path="/messages" component={DisplayMessage}></Route>
+        <Route exact path="/scheduler" component={CalendarPage}></Route>
       </Switch>
     </Router>
   </div>,
