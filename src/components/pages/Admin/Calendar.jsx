@@ -162,10 +162,7 @@ class Scheduler extends Component {
           popupOpen={this.onPopupOpen.bind(this)}
           dataBound={this.onDataBound.bind(this)}
           eventClick={this.onEventClick.bind(this)}
-<<<<<<< HEAD
-=======
           renderCell={this.onRenderCell.bind(this)}
->>>>>>> 7617317e300fb2689ace8ae84875c2452b79cbbf
           actionComplete={this.onActionComplete.bind(this)}
         >
           <Inject services={[Day, Week, Month, Agenda]} />
