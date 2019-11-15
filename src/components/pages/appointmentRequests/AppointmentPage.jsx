@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppointmentPage from "../forms/Appointments";
+import AppointmentPage from "./Appointment";
 
 class Appointment extends Component {
   state = {};

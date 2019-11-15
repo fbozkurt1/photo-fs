@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
 //components
-import DataTable from "../Admin/TempDataTable";
-import Sidebar from "../Admin/Sidebar";
-import Modal from "../Admin/Modal/Modal";
+import DataTable from "../../common/TempDataTable";
+import Sidebar from "../../common/Sidebar";
+import Modal from "../../common/Modal/Modal";
+import InputText from "../../formComponents/InputText";
 
 class Employee extends Component {
   constructor(props) {
@@ -68,7 +69,13 @@ class Employee extends Component {
     return (
       <div>
         <Modal show={this.state.isModalOpen} onClose={this.toggleModal}>
-          Here's some content for the modal
+          <InputText
+            placeholder="Telefon Numarası"
+            type="text"
+            name="phoneNum"
+            id="phoneNum"
+          />
+          <input type="text" />
         </Modal>
         <div className="row">
           <div className="col-md-2">

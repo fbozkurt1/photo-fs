@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import ReactStoreIndicator from "react-score-indicator";
 
 // components
-import InputText from "./formComponents/InputText";
-import SaveButton from "./formComponents/SaveButton";
-import InputTextArea from "./formComponents/InputTextArea";
+import InputText from "../../forms/InputTextInputText";
+import SaveButton from "../../formComponents/formComponents/SaveButton";
+import InputTextArea from "../../formComponents/formComponents/InputTextArea";
 
 class Feedback extends Component {
   state = { point: 0 };

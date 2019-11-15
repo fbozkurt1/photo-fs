@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContactBox from "./sectionComponents/ContactBox";
-import ContactForm from "../forms/ContactForm";
+import ContactForm from "../../contact/ContactForm";
 import GoogleMap from "./sectionComponents/GoogleMap";
 
 class Contact extends Component {

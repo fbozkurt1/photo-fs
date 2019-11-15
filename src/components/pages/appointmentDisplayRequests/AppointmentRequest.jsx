@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import Sidebar from "./Admin/Sidebar";
-import MsgCard from "./Admin/Cards/Card";
+import Sidebar from "../../common/Sidebar";
+import MsgCard from "../../common/Cards/Card";
 
-class DisplayMessage extends Component {
+class AppointmentRequest extends Component {
   state = { cards: [] };
-
   componentDidMount() {
     const dummyData = [
       {
         name: "Sefa Çotoğlu",
-        title: "İletişim İsteği",
+        title: "Randevu İsteği",
         email: "scotoglu@gmail.com",
         phone: "5302603724",
         date: "21.11.2019",
@@ -18,7 +17,7 @@ class DisplayMessage extends Component {
       },
       {
         name: "Sefa Çotoğlu2",
-        title: "İletişim İsteği",
+        title: "Randevu İsteği",
         email: "scotoglu@gmail.com",
         phone: "5302603724",
         date: "21.11.2019",
@@ -38,13 +37,13 @@ class DisplayMessage extends Component {
               phone={elem.phone}
               date={elem.date}
               description={elem.description}
-              isAppointmentCard="0"
-              feedbackPoint="0"
+              isAppointmentCard="1"
             />
           </div>
         </div>
       );
     });
+
     this.setState({ cards: cardData });
   }
   render() {
@@ -61,4 +60,4 @@ class DisplayMessage extends Component {
   }
 }
 
-export default DisplayMessage;
+export default AppointmentRequest;

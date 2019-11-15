@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import Sidebar from "./Admin/Sidebar";
-import CardView from "./Admin/CardView";
-import TempDataTable from "./Admin/TempDataTable";
-import Scheduler from "./Admin/Calendar";
-import Footer from "../sections/Footer";
-import Progress from "../forms/formComponents/Progress";
-import Modal from "./Admin/Modal/Modal";
+import Sidebar from "../../common/Sidebar";
+import CardView from "./CardView";
+import Footer from "../home/sections/Footer";
 
 class Adminpage extends Component {
   constructor() {
@@ -30,7 +26,6 @@ class Adminpage extends Component {
   render() {
     return (
       <div>
-        <Modal />
         <div className="row">
           <div className="col-md-2">
             <Sidebar />

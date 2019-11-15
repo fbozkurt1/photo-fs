@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // components
-import InputText from "./formComponents/InputText";
-import SaveButton from "./formComponents/SaveButton";
-import InputTextArea from "./formComponents/InputTextArea";
+import InputText from "../../formComponents/InputText";
+import SaveButton from "../../formComponents/SaveButton";
+import InputTextArea from "../../formComponents/InputTextArea";
 
 class ContactForm extends Component {
   state = {

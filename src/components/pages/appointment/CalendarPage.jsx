@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Scheduler from "../pages/Admin/Calendar";
-import Sidebar from "../pages/Admin/Sidebar";
+import Scheduler from "./Calendar";
+import Sidebar from "../../common/Sidebar";
+
 const CalendarPage = () => {
   return (
     <div className="row">

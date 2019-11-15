@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //images
-import AboutImage from "../../assets/images/about.jpg";
+import AboutImage from "../../../../assets/images/about.jpg";
 import Image from "./sectionComponents/Image";
 
 class Gallery extends Component {

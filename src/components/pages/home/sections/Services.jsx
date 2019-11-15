@@ -1,7 +1,7 @@
 import React from "react";
 
 //images
-import AboutImage from "../../assets/images/about.jpg";
+import AboutImage from "../../../../assets/images/about.jpg";
 
 const Services = () => (
   <section id="services" className="ftco-section">

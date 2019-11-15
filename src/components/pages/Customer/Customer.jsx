@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DataTable from "../Admin/TempDataTable";
-import Sidebar from "../Admin/Sidebar";
+import DataTable from "../../common/TempDataTable";
+import Sidebar from "../../common/Sidebar";
 class Customer extends Component {
   constructor(props) {
     super(props);

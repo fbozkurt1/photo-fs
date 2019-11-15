@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 // components
-import InputText from "./formComponents/InputText";
-import DropdownSelect from "./formComponents/DropdownSelect";
-import SaveButton from "./formComponents/SaveButton";
-import InputTextArea from "./formComponents/InputTextArea";
-import Dates from "./formComponents/Dates";
+import InputText from "../../forms/InputTextInputText";
+import DropdownSelect from "../../forms/DropdownSelectownSelect";
+import SaveButton from "../../formComponents/formComponents/SaveButton";
+import InputTextArea from "../../formComponents/formComponents/InputTextArea
+import Dates from "../../formComponents/formComponents/Dates
 import Home from "../sections/Home";
 import Footer from "../sections/Footer";
 import $ from "jquery";

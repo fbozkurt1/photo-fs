@@ -18,9 +18,7 @@ class InputText extends Component {
             <label>{values.placeholder} </label>
           </div>
         </div>
-      ) : (
-        <div></div>
-      );
+      ) : null;
     return (
       <div className="form-group required">
         <div className="row">
