@@ -68,22 +68,6 @@ class Scheduler extends Component {
       // }
     ];
   }
-<<<<<<< HEAD
-  onEventClick(args) {
-    let event = this.scheduleObj.getEventDetails(args.element);
-    // console.log(args.element);
-
-    // console.log(event);
-  }
-  onDataBound() {
-    let events = this.scheduleObj.getCurrentViewEvents();
-    // console.log(events);
-  }
-
-  onActionComplete(s) {
-    if (s.addedRecords) {
-      console.log("deneme", s.addedRecords.Subject);
-=======
 
   onActionComplete(Obj) {
     let requestType = Obj.requestType;
@@ -159,7 +143,6 @@ class Scheduler extends Component {
         // args.element.style.backgroundColor = "red";
         args.cancel = true;
       }
->>>>>>> 7617317e300fb2689ace8ae84875c2452b79cbbf
     }
   }
 
