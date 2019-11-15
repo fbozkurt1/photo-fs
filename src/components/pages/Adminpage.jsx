@@ -29,45 +29,42 @@ class Adminpage extends Component {
   };
   render() {
     return (
-      <div className="row">
-        <div className="col-md-2">
-          <Sidebar />
-        </div>
-        <div className="col-md-10">
-          <div className="container">
-            <div className="row mt-5">
-              <div className="col-md-3">
-                <CardView
-                  type="card bg-primary text-white"
-                  iconT="fas fa-comment"
-                  cardF="card-footer bg-primary text-white"
-                  text="Mesajınız var!"
-                />
+      <div>
+        <Modal />
+        <div className="row">
+          <div className="col-md-2">
+            <Sidebar />
+          </div>
+          <div className="col-md-10">
+            <div className="container">
+              <div className="row mt-5">
+                <div className="col-md-3">
+                  <CardView
+                    type="card bg-primary text-white"
+                    iconT="fas fa-comment"
+                    cardF="card-footer bg-primary text-white"
+                    text="Mesajınız var!"
+                  />
+                </div>
+                <div className="col-md-3">
+                  <CardView
+                    type="card bg-primary text-white"
+                    iconT="fas fa-comment"
+                    cardF="card-footer bg-primary text-white"
+                    text="Mesajınız var!"
+                  />
+                </div>
+                <div className="col-md-3">
+                  <CardView
+                    type="card bg-primary text-white"
+                    iconT="fas fa-comment"
+                    cardF="card-footer bg-primary text-white"
+                    text="Mesajınız var!"
+                  />
+                </div>
               </div>
-              <div className="col-md-3">
-                <CardView
-                  type="card bg-primary text-white"
-                  iconT="fas fa-comment"
-                  cardF="card-footer bg-primary text-white"
-                  text="Mesajınız var!"
-                />
-              </div>
-              <div className="col-md-3">
-                <CardView
-                  type="card bg-primary text-white"
-                  iconT="fas fa-comment"
-                  cardF="card-footer bg-primary text-white"
-                  text="Mesajınız var!"
-                />
-              </div>
-            </div>
-            <div>
-              <Modal deneme="fuat">
-                <h1>asdadasdasdsa</h1>
-                <h2>asdadasdasd</h2>
-              </Modal>
-            </div>
-            {/* <div className="row">
+
+              {/* <div className="row">
               {this.state.isShowing ? (
                 <div
                   onClick={this.closeModalHandler}
@@ -92,9 +89,10 @@ class Adminpage extends Component {
               </Modal>
             </div> */}
 
-            <div className="row mt-5">
-              <div className="col-md-12">
-                <Footer />
+              <div className="row mt-5">
+                <div className="col-md-12">
+                  <Footer />
+                </div>
               </div>
             </div>
           </div>
