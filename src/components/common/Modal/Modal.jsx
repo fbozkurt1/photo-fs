@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Modal extends React.Component {
+  componentDidMount() {
+    console.log(this.props.children);
+  }
+
   render() {
     // Render nothing if the "show" prop is false
     if (!this.props.show) {
@@ -23,29 +27,24 @@ class Modal extends React.Component {
     const modalStyle = {
       backgroundColor: "#fff",
       borderRadius: 5,
-      maxWidth: 500,
-      minHeight: 300,
+
       margin: "0 auto",
       padding: 30
     };
 
     return (
-      <div className="backdrop" style={{ backdropStyle }}>
-        <div className="modal" style={{ modalStyle }}>
-          {this.props.children}
-          <div className="footer">
-            <button
-              onClick={this.props.onClose}
-              type="button"
-              className="btn btn-primary"
-            >
-              <span
-                className="fa fa-window-close mr-2"
-                aria-hidden="true"
-              ></span>
-              Kapat
-            </button>
-          </div>
+      <div className="modal" style={{ modalStyle }}>
+        {this.props.children}
+        <div className="footer">
+          {/* <button
+            onClick={this.props.onClose}
+            type="button"
+            className="btn btn-primary"
+            style={{ position: "fixed" }}
+          >
+            <span className="fa fa-window-close mr-2" aria-hidden="true"></span>
+            Kapat
+          </button> */}
         </div>
       </div>
     );
@@ -53,7 +52,6 @@ class Modal extends React.Component {
 }
 
 Modal.propTypes = {
-  onClose: PropTypes.func.isRequired,
   show: PropTypes.bool,
   children: PropTypes.node
 };

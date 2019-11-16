@@ -9,9 +9,9 @@ a:hover {
 body .modal {
   position: fixed;
   width: 50%;
-  height: 50%;
+  height: 75%;
   left: 25%;
-  top: 25%;
+  top: 15%;
   bottom: 25%;
   border: 1px solid #ccc;
   background-color: #fff;
