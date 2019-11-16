@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import Main from "./components/pages/home/Main";
 import Appointment from "../src/components/pages/appointment/CalendarPage";
 // import Login from "../src/components/pages/Login";
-import Adminpage from "./components/pages/admin/Adminpage";
+import Adminpage from "./components/pages/Admin/Adminpage";
 import Employee from "./components/pages/employee/Employee";
 import Customer from "./components/pages/customer/Customer";
 import AppointmentRequest from "./components/pages/appointmentDisplayRequests/AppointmentRequest";

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../../common/Sidebar";
 import MsgCard from "../../common/Cards/Card";
-
+import Breadcrumb from "../../common/Breadcrumb";
 class AppointmentRequest extends Component {
   state = { cards: [] };
   componentDidMount() {
@@ -53,6 +53,19 @@ class AppointmentRequest extends Component {
           <Sidebar />
         </div>
         <div className="col-md-10 align-item-center">
+          <div className="row mt-4 ml-5">
+            <div className="col-md-5 ml-5">
+              <Breadcrumb
+                paths={[
+                  {
+                    to: "/admin",
+                    label: "Yönetim Paneli"
+                  },
+                  { to: "/apporeq", label: "Randevu Talepleri" }
+                ]}
+              />
+            </div>
+          </div>
           <div className="container">{this.state.cards}</div>
         </div>
       </div>

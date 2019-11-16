@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import Sidebar from "../../common/Sidebar";
 import CardView from "./CardView";
 import Footer from "../home/sections/Footer";
-
+import Breadcrumb from "../../common/Breadcrumb";
 class Adminpage extends Component {
   constructor() {
     super();
-
     this.state = {
       isShowing: false
     };
@@ -58,7 +57,11 @@ class Adminpage extends Component {
                   />
                 </div>
               </div>
-
+              <div className="row mt-5 ml-auto">
+                <Breadcrumb
+                  paths={[{ to: "/admin", label: "Yönetim Paneli" }]}
+                />
+              </div>
               {/* <div className="row">
               {this.state.isShowing ? (
                 <div

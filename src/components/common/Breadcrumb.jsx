@@ -1,12 +1,13 @@
 import React from "react";
-
-const Breadcrumb = () => {
+import { Link } from "react-router-dom";
+const Breadcrumb = props => {
   return (
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="#">Dashboard</a>
-      </li>
-      <li class="breadcrumb-item">Overview</li>
+      {props.paths.map(path => (
+        <li className="breadcrumb-item">
+          <Link to={path.to}>{path.label}</Link>
+        </li>
+      ))}
     </ol>
   );
 };

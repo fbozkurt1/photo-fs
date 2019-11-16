@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DataTable from "../../common/TempDataTable";
 import Sidebar from "../../common/Sidebar";
+import Breadcrumb from "../../common/Breadcrumb";
 class Customer extends Component {
   constructor(props) {
     super(props);
@@ -58,6 +59,16 @@ class Customer extends Component {
           <Sidebar />
         </div>
         <div className="col-md-10 mt-3">
+          <div className="row mt-5 ml-5">
+            <div className="col-md-5 ml-4">
+              <Breadcrumb
+                paths={[
+                  { to: "/admin", label: "Yönetim Paneli" },
+                  { to: "/customer", label: "Müşteri İşlemleri" }
+                ]}
+              />
+            </div>
+          </div>
           <div className="container">{isDataExist}</div>
         </div>
       </div>
