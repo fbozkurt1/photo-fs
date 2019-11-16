@@ -6,6 +6,7 @@ import Sidebar from "../../common/Sidebar";
 import Modal from "../../common/Modal/Modal";
 import InputText from "../../formComponents/InputText";
 import Breadcrumb from "../../common/Breadcrumb";
+import EmployeeModal from "../../common/Modal/EmployeeModal";
 
 class Employee extends Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Employee extends Component {
     this.state = {
       data: [],
       isLoaded: false,
-      isModalOpen: false
+      isModalOpen: false,
+      date: new Date()
     };
   }
 
@@ -22,6 +24,10 @@ class Employee extends Component {
       isModalOpen: !this.state.isModalOpen
     });
   };
+
+  onSave(name) {
+    console.log(name);
+  }
 
   componentDidMount() {
     // get employees from API and set state
@@ -58,7 +64,7 @@ class Employee extends Component {
   render() {
     const { data, isLoaded } = this.state;
 
-    const isDataExist = isLoaded ? (
+    const isEmployeesExist = isLoaded ? (
       <DataTable
         data={data}
         title="Personel Listesi"
@@ -67,16 +73,27 @@ class Employee extends Component {
     ) : (
       <h1>data yok daha</h1>
     );
+
+    const employee = {
+      name: "fuat",
+      email: "fuatbozkurt",
+      phone: "05344047939",
+      isActive: 1
+    };
+    const texts = {
+      title: "Personel Düzenle",
+      buttonText: "Kaydet"
+    };
+
     return (
       <div>
-        <Modal show={this.state.isModalOpen} onClose={this.toggleModal}>
-          <InputText
-            placeholder="Telefon Numarası"
-            type="text"
-            name="phoneNum"
-            id="phoneNum"
+        <Modal show={this.state.isModalOpen}>
+          <EmployeeModal
+            onClose={this.toggleModal}
+            onSave={this.onSave}
+            texts={texts}
+            employee={employee}
           />
-          <input type="text" />
         </Modal>
         <div className="row">
           <div className="col-md-2">
@@ -97,6 +114,7 @@ class Employee extends Component {
               </div>
             </div>
             <div className="container">{isDataExist}</div>
+            <div className="container">{isEmployeesExist}</div>
           </div>
         </div>
       </div>
