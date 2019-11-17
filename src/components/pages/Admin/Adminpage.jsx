@@ -57,11 +57,7 @@ class Adminpage extends Component {
                   />
                 </div>
               </div>
-              <div className="row mt-5 ml-auto">
-                <Breadcrumb
-                  paths={[{ to: "/admin", label: "Yönetim Paneli" }]}
-                />
-              </div>
+
               {/* <div className="row">
               {this.state.isShowing ? (
                 <div

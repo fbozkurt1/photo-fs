@@ -59,7 +59,7 @@ class Customer extends Component {
           <Sidebar />
         </div>
         <div className="col-md-10 mt-3">
-          <div className="row mt-5 ml-5">
+          <div className="row ml-5">
             <div className="col-md-5 ml-4">
               <Breadcrumb
                 paths={[
