@@ -26,9 +26,9 @@ class AppointmentRequest extends Component {
       }
     ];
 
-    let cardData = dummyData.map(elem => {
+    let cardData = dummyData.map((elem, index) => {
       return (
-        <div className="row mt-5 justify-content-center">
+        <div className={index === 0 ? "row" : "row mt-4"}>
           <div className="col-md-10">
             <MsgCard
               name={elem.name}
@@ -52,9 +52,9 @@ class AppointmentRequest extends Component {
         <div className="col-md-2">
           <Sidebar />
         </div>
-        <div className="col-md-10 align-item-center">
-          <div className="row mt-4 ml-5">
-            <div className="col-md-5 ml-5">
+        <div className="col-md-10 mt-3">
+          <div className="row ml-5">
+            <div className="col-md-5 ml-3">
               <Breadcrumb
                 paths={[
                   {
