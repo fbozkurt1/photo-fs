@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import Main from "./components/pages/home/Main";
 import Appointment from "../src/components/pages/appointment/CalendarPage";
 // import Login from "../src/components/pages/Login";
-import Adminpage from "./components/pages/Admin/Adminpage";
+import Adminpage from "./components/pages/admin/Adminpage";
 import Employee from "./components/pages/employee/Employee";
 import Customer from "./components/pages/customer/Customer";
 import AppointmentRequest from "./components/pages/appointmentDisplayRequests/AppointmentRequest";
@@ -20,8 +20,11 @@ import "./assets/css/util.css";
 // Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import store from "./redux/store/store";
+import { Provider } from "react-redux";
+
 render(
-  <div>
+  <Provider store={store}>
     <Router>
       <Switch>
         <Route exact path="/" component={Main}></Route>
@@ -34,6 +37,6 @@ render(
         <Route exact path="/feedbacks" component={FeedBacks}></Route>
       </Switch>
     </Router>
-  </div>,
+  </Provider>,
   document.getElementById("root")
 );
