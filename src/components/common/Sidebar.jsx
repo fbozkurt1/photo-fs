@@ -85,9 +85,19 @@ class Sidebar extends Component {
               </a>
             </li>
             <ul className="sub-menu collapse" id="new">
-              <li>
+              {/* <li>
                 <a href="/messages">
                   <i className="fas fa-arrow-right"></i> Mesajları Göster
+                </a>
+              </li> */}
+              <li>
+                <a href="/contactRequest">
+                  <i className="fas fa-arrow-right"></i> İletişim İstekleri
+                </a>
+              </li>
+              <li>
+                <a href="/feedbacks">
+                  <i className="fas fa-arrow-right"></i> Değerlendirme Mesajları
                 </a>
               </li>
             </ul>
