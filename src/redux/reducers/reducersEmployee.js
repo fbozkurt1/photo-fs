@@ -5,7 +5,7 @@ import {
 } from "../actions/actionsEmployee";
 
 const initialState = {
-  pending: false,
+  pending: true,
   employees: [],
   error: ""
 };
@@ -20,13 +20,13 @@ export default function employeesReducer(state = initialState, action) {
     case FETCH_EMPLOYEES_SUCCESS:
       return {
         ...state,
-        pending: true,
+        pending: false,
         employees: action.employees
       };
     case FETCH_EMPLOYEES_ERROR:
       return {
         ...state,
-        pending: true,
+        pending: false,
         error: action.error
       };
     default:

@@ -13,7 +13,6 @@ class Table extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props.data);
     this.getDataHeaders = this.getDataHeaders.bind(this);
     this.getDataRows = this.getDataRows.bind(this);
     this.getDataKeys = this.getDataKeys.bind(this);

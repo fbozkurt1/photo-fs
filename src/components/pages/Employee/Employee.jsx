@@ -16,6 +16,7 @@ import {
   getEmployeesError,
   getEmployeesPending
 } from "../../../redux/reducers/reducersEmployee";
+import { array } from "prop-types";
 
 class Employee extends Component {
   constructor(props) {
@@ -37,12 +38,14 @@ class Employee extends Component {
 
   shouldComponentRender() {
     const { pending } = this.props;
-    console.log(pending);
-    if (pending === false) {
-      return false;
-    }
-    // more tests
-    return true;
+    
+    return pending;
+
+    // if (pending === false) {
+    //   return false;
+    // }
+    // // more tests
+    // return true;
   }
 
   toggleModal = () => {
@@ -89,13 +92,23 @@ class Employee extends Component {
   render() {
     // const { employees, isLoaded } = this.state;
     const { employees, error, pending } = this.props;
-    if (!this.shouldComponentRender()) {
-      console.log("if", this.props);
+    console.log(employees);
+    console.log('component',this.shouldComponentRender());
 
+    if (this.shouldComponentRender()) {
       return <h1>data yok dah222222</h1>;
-    } else {
-      console.log("else", this.props);
+    }else{
+      let s = [employees];
+      console.log(employees);
+      return  (<DataTable
+      data={s}
+      title="Personel Listesi"
+      textButtonAdd="Personel Ekle"
+      />);
     }
+    
+   
+
     // const isEmployeesExist = isLoaded ? (
     //   <DataTable
     //     data={employees}

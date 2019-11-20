@@ -5,7 +5,7 @@ import employeeReducer from "../reducers/reducersEmployee";
 
 const middlewares = [thunk];
 const initialState = {
-  pending: false,
+  pending: true,
   employees: [],
   error: ""
 };

@@ -30,9 +30,7 @@ const employees = {
 function fetchEmployees() {
   return dispatch => {
     dispatch(fetchEmployeesPending());
-    setTimeout(() => {
-      console.log("waitinggg");
-    }, 5000);
+   
     if (employees) {
       dispatch(fetchEmployeesSuccess(employees));
       return employees;
