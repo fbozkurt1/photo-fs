@@ -16,18 +16,14 @@ import {
   getEmployeesError,
   getEmployeesPending
 } from "../../../redux/reducers/reducersEmployee";
-import { array } from "prop-types";
 
 class Employee extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   employees: [],
-    //   isLoaded: false,
-    //   pending: true
-    //   isModalOpen: false,
-    //   date: new Date()
-    // };
+    this.state = {
+      isModalOpen: false,
+      employeeId: 0
+    };
     this.shouldComponentRender = this.shouldComponentRender.bind(this);
   }
 
@@ -38,19 +34,15 @@ class Employee extends Component {
 
   shouldComponentRender() {
     const { pending } = this.props;
-    
     return pending;
-
-    // if (pending === false) {
-    //   return false;
-    // }
-    // // more tests
-    // return true;
   }
 
-  toggleModal = () => {
+  toggleModal = elem => {
+    // get button id -- yani personel ID
+    elem.target.getAttribute("data-id");
     this.setState({
-      isModalOpen: !this.state.isModalOpen
+      isModalOpen: !this.state.isModalOpen,
+      employeeId: elem.target.getAttribute("data-id")
     });
   };
 
@@ -58,66 +50,38 @@ class Employee extends Component {
     console.log(name);
   }
 
-  componentDidMount() {
-    // get employees from API and set state
-    // let dummyData = [
-    //   {
-    //     Adı: "fuat",
-    //     Telefon: "0555555555555",
-    //     Email: "Bangalore",
-    //     "": (
-    //       <div>
-    //         <button
-    //           onClick={this.toggleModal}
-    //           type="button"
-    //           className="btn btn-primary"
-    //         >
-    //           <span className="fa fa-edit mr-2" aria-hidden="true"></span>
-    //           Düzenle
-    //         </button>
-    //         <button type="button" className="btn btn-primary">
-    //           <span className="fa fa-trash-alt mr-2" aria-hidden="true"></span>
-    //           Sil
-    //         </button>
-    //       </div>
-    //     )
-    //   }
-    // ];
-    // this.setState({
-    //   employees: dummyData,
-    //   isLoaded: true
-    // });
-  }
+  componentDidMount() {}
 
   render() {
-    // const { employees, isLoaded } = this.state;
     const { employees, error, pending } = this.props;
-    console.log(employees);
-    console.log('component',this.shouldComponentRender());
 
     if (this.shouldComponentRender()) {
       return <h1>data yok dah222222</h1>;
-    }else{
-      let s = [employees];
-      console.log(employees);
-      return  (<DataTable
-      data={s}
-      title="Personel Listesi"
-      textButtonAdd="Personel Ekle"
-      />);
     }
-    
-   
 
-    // const isEmployeesExist = isLoaded ? (
-    //   <DataTable
-    //     data={employees}
-    //     title="Personel Listesi"
-    //     textButtonAdd="Personel Ekle"
-    //   />
-    // ) : (
-    //   <h1>data yok daha</h1>
-    // );
+    /** Düzenle ve Sil butonları */
+    employees.map(elem => {
+      elem.Islem = (
+        <div>
+          <button
+            value={elem.id}
+            data-id={elem.id}
+            onClick={this.toggleModal}
+            type="button"
+            className="btn btn-primary"
+          >
+            <span className="fa fa-edit mr-2" aria-hidden="true"></span>
+            Düzenle
+          </button>
+          <button type="button" className="btn btn-primary">
+            <span className="fa fa-trash-alt mr-2" aria-hidden="true"></span>
+            Sil
+          </button>
+        </div>
+      );
+      return elem;
+    });
+    /** End Düzenle ve Sil butonları */
 
     const employee = {
       name: "fuat",
@@ -132,14 +96,14 @@ class Employee extends Component {
 
     return (
       <div>
-        {/* <Modal show={this.state.isModalOpen}>
+        <Modal show={this.state.isModalOpen}>
           <EmployeeModal
             onClose={this.toggleModal}
             onSave={this.onSave}
             texts={texts}
             employee={employee}
           />
-        </Modal> */}
+        </Modal>
         <div className="row">
           <div className="col-md-2">
             <Sidebar />
