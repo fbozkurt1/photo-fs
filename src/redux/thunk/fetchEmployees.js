@@ -14,7 +14,7 @@ const employees = [
   }
 ];
 
-function fetchEmployees() {
+function fetchEmployees(employeeId) {
   return dispatch => {
     dispatch(fetchEmployeesPending());
 

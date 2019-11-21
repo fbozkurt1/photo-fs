@@ -136,18 +136,25 @@ class Employee extends Component {
     );
   }
 }
+
+// const mapStateToProps = state => ({
+//   error: getEmployeesError(state),
+//   employees: getEmployees(state),
+//   pending: getEmployeesPending(state)
+// });
+
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       fetchEmployees: fetchEmployeesAction
+//     },
+//     dispatch
+//   );
+
 const mapStateToProps = state => ({
-  error: getEmployeesError(state),
-  employees: getEmployees(state),
-  pending: getEmployeesPending(state)
+
+  
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      fetchEmployees: fetchEmployeesAction
-    },
-    dispatch
-  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Employee);
