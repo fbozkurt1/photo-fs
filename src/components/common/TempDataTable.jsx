@@ -45,14 +45,20 @@ class Table extends Component {
   };
 
   componentDidMount() {
-    $("#dataTable").DataTable({
+    let dTable = $("#dataTable").DataTable({
       paginate: true,
       language: {
         url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
       },
       columnDefs: [
-        { width: "20%", targets: -1, searchable: false, orderable: false }
-      ] // set column width to last column
+        { width: "20%", targets: -1, searchable: false, orderable: false }, // set column width to last column
+        { visible: false, targets: 0, searchable: false, orderable: false } // set invisible to first column (id column)
+      ]
+    });
+
+    $("#dataTable tbody").on("click", "button", function() {
+      let data = dTable.row($(this).parents("tr")).data();
+      alert(data[0] + "'s salary is: " + data[2]);
     });
   }
 
