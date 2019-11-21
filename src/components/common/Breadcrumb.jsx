@@ -6,7 +6,7 @@ const Breadcrumb = props => {
       {props.paths.map(path => (
         <li className="breadcrumb-item">
           <Link to={path.to}>
-            <span style={{ fontSize: "22px" }}>{path.label}</span>
+            <span style={{ fontSize: "18px" }}>{path.label}</span>
           </Link>
         </li>
       ))}

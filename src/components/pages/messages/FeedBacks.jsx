@@ -8,7 +8,7 @@ class FeedBacks extends Component {
     const dummyData = [
       {
         name: "Sefa Çotoğlu",
-        title: "Değerlendirme",
+        title: "Değerlendirme Mesajları",
         email: "scotoglu@gmail.com",
         phone: "5302603724",
         date: "21.11.2019",
@@ -17,7 +17,7 @@ class FeedBacks extends Component {
       },
       {
         name: "Sefa Çotoğlu2",
-        title: "Değerlendirme",
+        title: "Değerlendirme Mesajları",
         email: "scotoglu@gmail.com",
         phone: "5302603724",
         date: "21.11.2019",
@@ -27,9 +27,9 @@ class FeedBacks extends Component {
       }
     ];
 
-    let cardData = dummyData.map(elem => {
+    let cardData = dummyData.map((elem, index) => {
       return (
-        <div className="row mt-5 justify-content-center">
+        <div className={index === 0 ? "row" : "row mt-4"}>
           <div className="col-md-10">
             <MsgCard
               name={elem.name}
@@ -38,7 +38,7 @@ class FeedBacks extends Component {
               phone={elem.phone}
               date={elem.date}
               description={elem.description}
-              feedbackPoint="1"
+              feedbackPoint="20"
             />
           </div>
         </div>
@@ -56,14 +56,14 @@ class FeedBacks extends Component {
           </div>
           <div className="col-md-10">
             <div className="row mt-4 ml-5">
-              <div className="col-md-5 ml-5">
+              <div className="col-md-5 ml-3">
                 <Breadcrumb
                   paths={[
                     {
                       to: "/admin",
                       label: "Yönetim Paneli"
                     },
-                    { to: "/messages", label: "Değerlendirme Mesajları" }
+                    { to: "/feedbacks", label: "Değerlendirme Mesajları" }
                   ]}
                 />
               </div>

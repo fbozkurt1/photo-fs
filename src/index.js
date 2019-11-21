@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import Main from "./components/pages/home/Main";
 import Appointment from "../src/components/pages/appointment/CalendarPage";
 // import Login from "../src/components/pages/Login";
-import Adminpage from "./components/pages/admin/Adminpage";
+import Adminpage from "./components/pages/Admin/Adminpage";
 import Employee from "./components/pages/employee/Employee";
 import Customer from "./components/pages/customer/Customer";
 import AppointmentRequest from "./components/pages/appointmentDisplayRequests/AppointmentRequest";
@@ -22,6 +22,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import store from "./redux/store/store";
 import { Provider } from "react-redux";
+import Upload from "./components/pages/uploadPhotos/Upload";
 
 render(
   <Provider store={store}>
@@ -35,6 +36,7 @@ render(
         <Route exact path="/apporeq" component={AppointmentRequest}></Route>
         <Route exact path="/contactRequest" component={ContactRequest}></Route>
         <Route exact path="/feedbacks" component={FeedBacks}></Route>
+        <Route exact path="/upload" component={Upload}></Route>
       </Switch>
     </Router>
   </Provider>,

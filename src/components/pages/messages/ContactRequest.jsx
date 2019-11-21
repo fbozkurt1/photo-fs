@@ -27,9 +27,9 @@ class ContactRequest extends Component {
       }
     ];
 
-    let cardData = dummyData.map(elem => {
+    let cardData = dummyData.map((elem, index) => {
       return (
-        <div className="row mt-5 justify-content-center">
+        <div className={index === 0 ? "row" : "row mt-4"}>
           <div className="col-md-10">
             <MsgCard
               name={elem.name}
@@ -43,7 +43,6 @@ class ContactRequest extends Component {
         </div>
       );
     });
-
     this.setState({ cards: cardData });
   }
   render() {
@@ -55,14 +54,14 @@ class ContactRequest extends Component {
           </div>
           <div className="col-md-10">
             <div className="row mt-4 ml-5">
-              <div className="col-md-5 ml-5">
+              <div className="col-md-5 ml-3">
                 <Breadcrumb
                   paths={[
                     {
                       to: "/admin",
                       label: "Yönetim Paneli"
                     },
-                    { to: "/messages", label: "İletişim İstekleri" }
+                    { to: "/contactRequest", label: "İletişim İstekleri" }
                   ]}
                 />
               </div>

@@ -61,7 +61,7 @@ class Sidebar extends Component {
               </li>
 
               <li>
-                <a href="#">
+                <a href="/upload">
                   <i className="fas fa-arrow-right"></i> Fotoğraf Yükleme
                 </a>
               </li>
