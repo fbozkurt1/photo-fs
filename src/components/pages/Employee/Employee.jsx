@@ -9,20 +9,22 @@ import EmployeeModal from "../../common/Modal/EmployeeModal";
 
 //Redux
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import fetchEmployeesAction from "../../../redux/thunk/fetchEmployees";
-import {
-  getEmployees,
-  getEmployeesError,
-  getEmployeesPending
-} from "../../../redux/reducers/reducersEmployee";
+// import { bindActionCreators } from "redux";
+// import fetchEmployeesAction from "../../../redux/thunk/fetchEmployees";
+// import {
+//   getEmployees,
+//   getEmployeesError,
+//   getEmployeesPending
+// } from "../../../redux/reducers/reducersEmployee";
 
 class Employee extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isModalOpen: false,
-      employeeId: 0
+      employeeId: 0,
+      employees: []
     };
     this.shouldComponentRender = this.shouldComponentRender.bind(this);
   }
@@ -153,8 +155,11 @@ class Employee extends Component {
 
 const mapStateToProps = state => ({
 
-  
+    
 });
 
+const mapDispatchToProps = dispatch => {
+    fetchEmployees: fetchEmployeesAction
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Employee);

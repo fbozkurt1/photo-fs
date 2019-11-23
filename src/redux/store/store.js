@@ -16,10 +16,10 @@
 // );
 
 import thunk from 'redux-thunk';
-import employeeReducer from '../reducers/reducersEmployee';
+import rootReducer from '../reducers/rootReducer';
 import {createStore, applyMiddleware} from 'redux';
 
-const store = createStore(employeeReducer,applyMiddleware(thunk));
+const store = createStore(rootReducer,applyMiddleware(thunk));
 
 export default store;
 
