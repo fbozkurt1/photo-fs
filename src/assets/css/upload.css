@@ -1,0 +1,26 @@
+#uploadedImage:hover {
+  background-color: yellow;
+}
+/*After the hover how its look like: 'Position of button'*/
+#delete {
+  position: absolute;
+  width: 10px;
+  right: 40px;
+  top: -10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+#delete a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+/*Hover*/
+.container:hover #delete {
+  opacity: 1;
+}
