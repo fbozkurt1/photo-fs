@@ -11,6 +11,8 @@ import Customer from "./components/pages/customer/Customer";
 import AppointmentRequest from "./components/pages/appointmentDisplayRequests/AppointmentRequest";
 import ContactRequest from "./components/pages/messages/ContactRequest";
 import FeedBacks from "./components/pages/messages/FeedBacks";
+import CustomerDownload from "./components/pages/customerdownload/CustomerDownload";
+
 // Tools
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -37,6 +39,7 @@ render(
         <Route exact path="/contactRequest" component={ContactRequest}></Route>
         <Route exact path="/feedbacks" component={FeedBacks}></Route>
         <Route exact path="/upload" component={Upload}></Route>
+        <Route exact path="/download" component={CustomerDownload}></Route>
       </Switch>
     </Router>
   </Provider>,

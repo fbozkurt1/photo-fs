@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DataTable from "../../common/TempDataTable";
 import Sidebar from "../../common/Sidebar";
 import Breadcrumb from "../../common/Breadcrumb";
+import Footer from "../home/sections/Footer";
 class Customer extends Component {
   constructor(props) {
     super(props);
@@ -70,6 +71,9 @@ class Customer extends Component {
             </div>
           </div>
           <div className="container">{isDataExist}</div>
+          <div className="col">
+            <Footer />
+          </div>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../../common/Sidebar";
 import "../../../assets/css/upload.css";
+
 class Upload extends Component {
   fileObj = [];
   fileArray = [];
@@ -81,8 +82,8 @@ class Upload extends Component {
             </div>
             <div className="container mt-3">
               <div className="row">
-                {this.state.file.map(url => (
-                  <div className="col-md-3">
+                {this.state.file.map((url, index) => (
+                  <div className="col-md-3" key={index}>
                     <img
                       id="uploadedImage"
                       className="img-fluid img-thumbnail"
@@ -103,47 +104,6 @@ class Upload extends Component {
                     </button>
                   </div>
                 ))}
-
-                {/* <div className="col-lg-3 col-md-4 col-6">
-                  <img
-                    className="img-fluid img-thumbnail"
-                    src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
-                    alt=""
-                  />
-                  <button className="btn" id="delete" type="button">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </div>
-                <div className="col-lg-3 col-md-4 col-6">
-                  <img
-                    className="img-fluid img-thumbnail"
-                    src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
-                    alt=""
-                  />
-                  <button className="btn" id="delete" type="button">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </div>
-                <div className="col-lg-3 col-md-4 col-6">
-                  <img
-                    className="img-fluid img-thumbnail"
-                    src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
-                    alt=""
-                  />
-                  <button className="btn" id="delete" type="button">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </div>
-                <div className="col-lg-3 col-md-4 col-6">
-                  <img
-                    className="img-fluid img-thumbnail"
-                    src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
-                    alt=""
-                  />
-                  <button className="btn" id="delete" type="button">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </div> */}
               </div>
               {this.state.file.length === 0 ? null : (
                 <div className="row mt-3 float-right mb-5">

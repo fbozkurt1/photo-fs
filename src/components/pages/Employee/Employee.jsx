@@ -16,6 +16,7 @@ import {
   getEmployeesError,
   getEmployeesPending
 } from "../../../redux/reducers/reducersEmployee";
+import Footer from "../home/sections/Footer";
 
 class Employee extends Component {
   constructor(props) {
@@ -129,6 +130,9 @@ class Employee extends Component {
                 title="Personel Listesi"
                 textButtonAdd="Personel Ekle"
               />
+            </div>
+            <div className="col">
+              <Footer />
             </div>
           </div>
         </div>
