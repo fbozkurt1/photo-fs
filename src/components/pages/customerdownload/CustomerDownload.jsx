@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Sidebar from "../../common/Sidebar";
+import Progress from "../../formComponents/Progressbar";
 import "../../../assets/css/customerDownload.css";
+
 class CustomerDownload extends Component {
   tempArrImages = [];
   dataset = [];
@@ -84,9 +86,17 @@ class CustomerDownload extends Component {
           <Sidebar />
         </div>
         <div className="col-md-10">
-          <div className="row mt-5 ml-5">
-            <h4>Hoşgeldiniz, {this.state.user.name}</h4>
-            <div className="row"></div>
+          <div className="row mt-5">
+            <div className="container">
+              <div className="col-md-10">
+                <h4>Hoşgeldiniz, {this.state.user.name}</h4>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-10 ml-5">
+              <Progress />
+            </div>
           </div>
 
           <div className="row">
