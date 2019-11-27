@@ -1,19 +1,22 @@
 import {
   FETCH_EMPLOYEES_ERROR,
   FETCH_EMPLOYEES_SUCCESS,
-  FETCH_EMPLOYEES_PENDING,
-  FETCH_EMPLOYEE_BY_ID_ERROR,
-  FETCH_EMPLOYEE_BY_ID_PENDING,
-  FETCH_EMPLOYEE_BY_ID_SUCCESS
+  FETCH_EMPLOYEES_PENDING
 } from "../actions/employeeActions";
 
-const initialState = {
+const initialStateEmployees = {
   employees: [],
   pending: true,
   error: null
-}
+};
 
-const employeesReducer = (state = initialState, action) => {
+const initialStateEmployeeById = {
+  employee: {},
+  pending: true,
+  error: null
+};
+
+export const employeeReducers = (state = initialStateEmployees, action) => {
   switch (action.type) {
     case FETCH_EMPLOYEES_PENDING:
       return {
@@ -36,29 +39,7 @@ const employeesReducer = (state = initialState, action) => {
         error: action.error
       };
 
-    /** EMPLOYEE BY ID */
-    case FETCH_EMPLOYEE_BY_ID_PENDING:
-      return {
-        pending: true,
-        error: false
-      };
-    case FETCH_EMPLOYEE_BY_ID_SUCCESS:
-      return {
-        pending: false,
-        employee: action.employee,
-        error: false
-      };
-    case FETCH_EMPLOYEE_BY_ID_ERROR:
-      return {
-        pending: false,
-        error: action.error
-      };
-    /** END EMPLOYEE BY ID */
-
     default:
       return state;
   }
-}
-
-export default employeesReducer;
-
+};

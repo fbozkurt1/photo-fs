@@ -11,28 +11,30 @@ import EmployeeModal from "../../common/Modal/EmployeeModal";
 import { connect } from "react-redux";
 import { fetchEmployees } from "../../../redux/thunk/fetchEmployees";
 
-
 class Employee extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isModalOpen: false,
-      employeeId: -1
+      employee: {}
     };
   }
 
   toggleModal = elem => {
     // get button id -- yani personel ID
-
+    const employeeId = elem.target.getAttribute("data-id");
+    console.log(
+      "employees2",
+      this.props.employees.find(x => x.id == employeeId)
+    );
     this.setState({
       isModalOpen: !this.state.isModalOpen,
-      employeeId: elem.target.getAttribute("data-id")
+      employee: this.props.employees.find(x => x.id == employeeId)
     });
-
   };
 
-  onSave(name) {
-    console.log('name', name);
+  onSave(data) {
+    console.log("data", data);
   }
 
   componentDidMount() {
@@ -48,7 +50,7 @@ class Employee extends Component {
 
     /** Düzenle ve Sil butonları */
     employees.map(elem => {
-      elem.Islem = (
+      elem.action = (
         <div>
           <button
             value={elem.id}
@@ -70,12 +72,12 @@ class Employee extends Component {
     });
     /** End Düzenle ve Sil butonları */
 
-    const employee = {
-      name: "fuat",
-      email: "fuatbozkurt",
-      phone: "05344047939",
-      isActive: 1
-    };
+    // const employee = {
+    //   name: "fuat",
+    //   email: "fuatbozkurt",
+    //   phone: "05344047939",
+    //   isActive: 1
+    // };
     const texts = {
       title: "Personel Düzenle",
       buttonText: "Kaydet"
@@ -88,7 +90,7 @@ class Employee extends Component {
             onClose={this.toggleModal}
             onSave={this.onSave}
             texts={texts}
-            employee={employee}
+            employee={this.state.employee}
           />
         </Modal>
         <div className="row">
@@ -131,6 +133,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchEmployees
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Employee);

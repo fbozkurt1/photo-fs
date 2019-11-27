@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Modal extends React.Component {
-  componentDidMount() {
-    console.log(this.props.children);
-  }
+  componentDidMount() {}
 
   render() {
     // Render nothing if the "show" prop is false

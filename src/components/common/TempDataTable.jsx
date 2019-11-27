@@ -26,10 +26,17 @@ class Table extends Component {
   getDataKeys = () => Object.keys(this.props.data[0]);
 
   getDataHeaders = () => {
-    let keys = this.getDataKeys();
-    return keys.map((key, index) => {
-      return <th key={key}>{key}</th>;
-    });
+    return (
+      <tr>
+        <th>id</th>
+        <th>Ad-Soyad</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Eklenme Tarihi</th>
+        <th>Aktif mi?</th>
+        <th>işlem</th>
+      </tr>
+    );
   };
 
   getDataRows = () => {
@@ -37,7 +44,7 @@ class Table extends Component {
     let keys = this.getDataKeys();
     return items.map((row, index) => {
       return (
-        <tr key={index}>
+        <tr key={`${row.name}${index}`}>
           <RenderRow key={index} data={row} keys={keys} />
         </tr>
       );
@@ -52,7 +59,8 @@ class Table extends Component {
       },
       columnDefs: [
         { width: "20%", targets: -1, searchable: false, orderable: false }, // set column width to last column
-        { visible: false, targets: 0, searchable: false, orderable: false } // set invisible to first column (id column)
+        { visible: false, targets: 0, searchable: false, orderable: false }, // set invisible to first column (id column)
+        { visible: false, targets: -2, searchable: false, orderable: false }
       ]
     });
 
@@ -81,12 +89,8 @@ class Table extends Component {
               width="100%"
               cellSpacing="0"
             >
-              <thead>
-                <tr>{this.getDataHeaders()}</tr>
-              </thead>
-              <tfoot>
-                <tr>{this.getDataHeaders()}</tr>
-              </tfoot>
+              <thead>{this.getDataHeaders()}</thead>
+              <tfoot>{this.getDataHeaders()}</tfoot>
               <tbody>{this.getDataRows()}</tbody>
             </table>
           </div>
@@ -97,8 +101,9 @@ class Table extends Component {
 }
 
 const RenderRow = props => {
+  //`${index}${props.data[key]}`
   return props.keys.map((key, index) => {
-    return <td key={props.data[key]}>{props.data[key]}</td>;
+    return <td key={`${index}${props.data[key]}`}>{props.data[key]}</td>;
   });
 };
 
