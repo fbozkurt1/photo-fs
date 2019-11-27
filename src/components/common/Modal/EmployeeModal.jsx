@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import DatePicker from "react-date-picker";
 
+//Redux
+import { connect } from "react-redux";
+import { fetchEmployeeById } from "../../../redux/thunk/fetchEmployees";
+
 class EmployeeModal extends Component {
   state = { date: new Date() };
 
@@ -9,6 +13,11 @@ class EmployeeModal extends Component {
   };
 
   onDateChange = date => this.setState({ date });
+
+  componentDidMount() {
+    const emp = this.props.fetchEmployeeById(1);
+    console.log(emp);
+  }
 
   render() {
     const { texts, employee } = this.props;
@@ -96,4 +105,14 @@ class EmployeeModal extends Component {
   }
 }
 
-export default EmployeeModal;
+const mapStateToProps = state => ({
+  employees: state.employeeReducers.employees,
+  pending: state.employeeReducers.pending
+});
+
+const mapDispatchToProps = {
+  fetchEmployeeById
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeModal);
+

@@ -9,61 +9,42 @@ import EmployeeModal from "../../common/Modal/EmployeeModal";
 
 //Redux
 import { connect } from "react-redux";
-// import fetchEmployeesAction from "../../../redux/thunk/fetchEmployees";
-import {fetchEmployees} from "../../../redux/thunk/fetchEmployees";
+import { fetchEmployees } from "../../../redux/thunk/fetchEmployees";
 
-// import { bindActionCreators } from "redux";
-// import fetchEmployeesAction from "../../../redux/thunk/fetchEmployees";
-// import {
-//   getEmployees,
-//   getEmployeesError,
-//   getEmployeesPending
-// } from "../../../redux/reducers/reducersEmployee";
 
 class Employee extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     isModalOpen: false,
-  //     employeeId: 0,
-  //     employees: [],
-  //     pending:true,
-  //     error: null
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      employeeId: -1
+    };
+  }
 
   toggleModal = elem => {
     // get button id -- yani personel ID
-    elem.target.getAttribute("data-id");
+
     this.setState({
       isModalOpen: !this.state.isModalOpen,
       employeeId: elem.target.getAttribute("data-id")
     });
+
   };
 
   onSave(name) {
-    console.log(name);
+    console.log('name', name);
   }
 
   componentDidMount() {
-
-    console.log(this.props.fetchEmployees);
     this.props.fetchEmployees();
   }
 
   render() {
     const { employees, error, pending } = this.props;
-    console.log('pending',this.props.pending);
 
     if (pending) {
-      return <h1>data yok dah222222</h1>;
-      console.log("iff");
-    }else{
-      console.log(employees);
-      return <h1>denmee fata</h1>;
+      return <h1>data yükleniyor</h1>;
     }
-    
-    
 
     /** Düzenle ve Sil butonları */
     employees.map(elem => {
@@ -100,57 +81,56 @@ class Employee extends Component {
       buttonText: "Kaydet"
     };
 
-    // return (
-    //   <div>
-    //     <Modal show={this.state.isModalOpen}>
-    //       <EmployeeModal
-    //         onClose={this.toggleModal}
-    //         onSave={this.onSave}
-    //         texts={texts}
-    //         employee={employee}
-    //       />
-    //     </Modal>
-    //     <div className="row">
-    //       <div className="col-md-2">
-    //         <Sidebar />
-    //       </div>
-    //       <div className="col-md-10 mt-3">
-    //         <div className="row ml-5">
-    //           <div className="col-md-5 ml-4">
-    //             <Breadcrumb
-    //               paths={[
-    //                 {
-    //                   to: "/admin",
-    //                   label: "Yönetim Paneli"
-    //                 },
-    //                 { to: "/employee", label: "Personel İşlemleri" }
-    //               ]}
-    //             />
-    //           </div>
-    //         </div>
+    return (
+      <div>
+        <Modal show={this.state.isModalOpen}>
+          <EmployeeModal
+            onClose={this.toggleModal}
+            onSave={this.onSave}
+            texts={texts}
+            employee={employee}
+          />
+        </Modal>
+        <div className="row">
+          <div className="col-md-2">
+            <Sidebar />
+          </div>
+          <div className="col-md-10 mt-3">
+            <div className="row ml-5">
+              <div className="col-md-5 ml-4">
+                <Breadcrumb
+                  paths={[
+                    {
+                      to: "/admin",
+                      label: "Yönetim Paneli"
+                    },
+                    { to: "/employee", label: "Personel İşlemleri" }
+                  ]}
+                />
+              </div>
+            </div>
 
-    //         <div className="container">
-    //           <DataTable
-    //             data={employees}
-    //             title="Personel Listesi"
-    //             textButtonAdd="Personel Ekle"
-    //           />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // );
+            <div className="container">
+              <DataTable
+                data={employees}
+                title="Personel Listesi"
+                textButtonAdd="Personel Ekle"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => ({
-    employees: state.employees,
-    pending: state.pending
-    
-}, console.log('maps',state));
+  employees: state.employeeReducers.employees,
+  pending: state.employeeReducers.pending
+});
 
 const mapDispatchToProps = {
   fetchEmployees
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Employee);
+export default connect(mapStateToProps, mapDispatchToProps)(Employee);
