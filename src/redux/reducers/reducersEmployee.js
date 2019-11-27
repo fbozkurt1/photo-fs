@@ -4,24 +4,32 @@ import {
   FETCH_EMPLOYEES_PENDING
 } from "../actions/actionsEmployee";
 
+const initialState = {
+  employees: [],
+  pending:true,
+  error: null
+}
 
-const employeesReducer = (state = {}, action) => {
+const employeesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_EMPLOYEES_PENDING:
       return {
         ...state,
-        pending: true
+        pending: true,
+        error:null
       };
     case FETCH_EMPLOYEES_SUCCESS:
       return {
         ...state,
         pending: false,
-        employees: action.employees
+        employees: action.employees,
+        error:null
       };
     case FETCH_EMPLOYEES_ERROR:
       return {
         ...state,
         pending: false,
+        employees:[],
         error: action.error
       };
     default:

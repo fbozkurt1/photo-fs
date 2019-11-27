@@ -11,20 +11,24 @@ const employees = [
     Adı: "fuat",
     Telefon: "0555555555555",
     Email: "Bangalore"
+  },{
+    id: 2,
+    Adı: "fuat22",
+    Telefon: "052255555555555",
+    Email: "Bangal222ore"
   }
 ];
 
-function fetchEmployees(employeeId) {
+
+export const fetchEmployees = () => {
   return dispatch => {
     dispatch(fetchEmployeesPending());
 
-    if (employees) {
+    // if (employees) {
       dispatch(fetchEmployeesSuccess(employees));
       return employees;
-    } else {
-      dispatch(fetchEmployeesError("some error"));
-    }
+    // } else {
+    //   dispatch(fetchEmployeesError("some error"));
+    // }
   };
 }
-
-export default fetchEmployees;
