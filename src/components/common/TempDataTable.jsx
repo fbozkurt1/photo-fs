@@ -23,6 +23,16 @@ class Table extends Component {
     };
   }
 
+  componentDidUpdate(prevProps, prevStates) {
+    console.log("updated");
+    if (prevProps.data.length != this.props.data.length) {
+      console.log("changed");
+      this.setState({
+        data: this.props.data
+      });
+    }
+  }
+
   getDataKeys = () => Object.keys(this.props.data[0]);
 
   getDataHeaders = () => {
@@ -50,8 +60,7 @@ class Table extends Component {
       );
     });
   };
-
-  componentDidMount() {
+  initDatatable = () => {
     let dTable = $("#dataTable").DataTable({
       paginate: true,
       language: {
@@ -66,19 +75,28 @@ class Table extends Component {
 
     $("#dataTable tbody").on("click", "button", function() {
       let data = dTable.row($(this).parents("tr")).data();
-      alert(data[0] + "'s salary is: " + data[2]);
+      // alert(data[0] + "'s salary is: " + data[2]);
     });
+  };
+  componentDidMount() {
+    this.initDatatable();
   }
 
   render() {
+    console.log("render", this.state);
+    const { onClickAddButton, textButtonAdd, title } = this.props;
     return (
       <div className="card ml-3 w-100">
         <div className="card-header">
           <i className="fas fa-table"></i>
-          <span className="ml-3">{this.state.title}</span>
-          <button type="button" className="btn btn-primary float-right">
+          <span className="ml-3">{title}</span>
+          <button
+            type="button"
+            onClick={onClickAddButton}
+            className="btn btn-primary float-right"
+          >
             <span className="fa fa-plus mr-2" aria-hidden="true"></span>
-            {this.state.textButtonAdd}
+            {textButtonAdd}
           </button>
         </div>
         <div className="card-body">

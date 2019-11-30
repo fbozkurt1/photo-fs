@@ -33,8 +33,8 @@ class Modal extends React.Component {
     return (
       <div className="modal" style={{ modalStyle }}>
         {this.props.children}
-        <div className="footer">
-          {/* <button
+        {/* <div className="footer">
+           <button
             onClick={this.props.onClose}
             type="button"
             className="btn btn-primary"
@@ -42,8 +42,8 @@ class Modal extends React.Component {
           >
             <span className="fa fa-window-close mr-2" aria-hidden="true"></span>
             Kapat
-          </button> */}
-        </div>
+          </button> 
+        </div> */}
       </div>
     );
   }

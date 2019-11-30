@@ -9,32 +9,56 @@ import EmployeeModal from "../../common/Modal/EmployeeModal";
 
 //Redux
 import { connect } from "react-redux";
-import { fetchEmployees } from "../../../redux/thunk/fetchEmployees";
+import {
+  fetchEmployees,
+  addEmployee
+} from "../../../redux/thunk/employeeThunk";
 
 class Employee extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isModalOpen: false,
-      employee: {}
+      employee: {},
+      action: null
     };
+    this.handleAddEmployee = this.handleAddEmployee.bind(this);
   }
 
-  toggleModal = elem => {
-    // get button id -- yani personel ID
-    const employeeId = elem.target.getAttribute("data-id");
-    console.log(
-      "employees2",
-      this.props.employees.find(x => x.id == employeeId)
-    );
+  toggleModal = () => {
     this.setState({
-      isModalOpen: !this.state.isModalOpen,
-      employee: this.props.employees.find(x => x.id == employeeId)
+      isModalOpen: !this.state.isModalOpen
     });
   };
 
-  onSave(data) {
-    console.log("data", data);
+  editEmployee = elem => {
+    // get button id -- yani personel ID
+    const employeeId = elem.target.getAttribute("data-id");
+    this.setState({
+      employee: this.props.employees.find(x => x.id == employeeId),
+      action: "edit"
+    });
+    this.toggleModal();
+  };
+
+  addEmployee = () => {
+    this.setState({
+      employee: {},
+      action: "add"
+    });
+    this.toggleModal();
+  };
+
+  handleEditEmployee(data) {
+    // todo --> update employee process
+    console.log("data ", data);
+  }
+
+  handleAddEmployee(data) {
+    // todo --> update employee process
+    this.toggleModal();
+    this.props.addEmployee(data);
+    // console.log("data ", data);
   }
 
   componentDidMount() {
@@ -43,7 +67,7 @@ class Employee extends Component {
 
   render() {
     const { employees, error, pending } = this.props;
-
+    console.log(employees);
     if (pending) {
       return <h1>data yükleniyor</h1>;
     }
@@ -55,7 +79,7 @@ class Employee extends Component {
           <button
             value={elem.id}
             data-id={elem.id}
-            onClick={this.toggleModal}
+            onClick={this.editEmployee}
             type="button"
             className="btn btn-primary"
           >
@@ -72,12 +96,6 @@ class Employee extends Component {
     });
     /** End Düzenle ve Sil butonları */
 
-    // const employee = {
-    //   name: "fuat",
-    //   email: "fuatbozkurt",
-    //   phone: "05344047939",
-    //   isActive: 1
-    // };
     const texts = {
       title: "Personel Düzenle",
       buttonText: "Kaydet"
@@ -88,9 +106,11 @@ class Employee extends Component {
         <Modal show={this.state.isModalOpen}>
           <EmployeeModal
             onClose={this.toggleModal}
-            onSave={this.onSave}
+            onEdit={this.handleEditEmployee}
+            onAdd={this.handleAddEmployee}
             texts={texts}
             employee={this.state.employee}
+            action={this.state.action}
           />
         </Modal>
         <div className="row">
@@ -117,6 +137,7 @@ class Employee extends Component {
                 data={employees}
                 title="Personel Listesi"
                 textButtonAdd="Personel Ekle"
+                onClickAddButton={this.addEmployee}
               />
             </div>
           </div>
@@ -132,7 +153,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchEmployees
+  fetchEmployees,
+  addEmployee
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Employee);

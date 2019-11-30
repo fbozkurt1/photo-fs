@@ -2,7 +2,10 @@ import React from "react";
 import {
   fetchEmployeesError,
   fetchEmployeesPending,
-  fetchEmployeesSuccess
+  fetchEmployeesSuccess,
+  addEmployeePending,
+  addEmployeeSuccess,
+  addEmployeeError
 } from "../actions/employeeActions";
 
 const employees = [
@@ -34,5 +37,17 @@ export const fetchEmployees = () => {
     // } else {
     //   dispatch(fetchEmployeesError("some error"));
     // }
+  };
+};
+
+export const addEmployee = employee => {
+  return dispatch => {
+    dispatch(addEmployeePending());
+
+    let arr = [...employees, employee];
+    // if adding employee succeed
+    dispatch(addEmployeeSuccess(arr));
+    //else dispatch error
+    //err
   };
 };
